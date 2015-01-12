@@ -1,9 +1,11 @@
 # Sickbeard on Centos 6.5 docker container
 
 ## Docker container for running sickbeard.
+  
   Access via https://localhost:43080/home
 
   Defaults to /mnt/multimedia/tv for TV Shows
+  
   SSL certificate are enabled with a self-signed certificate.
 
 ## Requires 
@@ -15,11 +17,14 @@
   
   Volumes
     - /opt/sickbeard/config.ini for sickbeard configuration files (if you want the configuration file external)
+  
     - /var/logs/                for log files
+  
     - /mnt/media                mapped to the media files
 
   Map Ports
     - 8081 ->  43080         SickBeard page
+  
     - 9001 ->  43091         supervisor page
 
 ## To build container
