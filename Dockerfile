@@ -1,7 +1,7 @@
 # Based on centos:6.5. 
 FROM centos:centos6
 
-MAINTAINER Psuedot <pseudot@outlook.com>
+MAINTAINER Pseudot <pseudot@outlook.com>
 
 # Install RPM keys
 RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
