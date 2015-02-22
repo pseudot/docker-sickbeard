@@ -16,7 +16,5 @@ Temporary Items
 .apdisk
 
 # software files
-python/ez_setup.py
-python/cheetah.tar.gz
-python/pyOpenSSL.tar.gz
+python/
 sickbeard/

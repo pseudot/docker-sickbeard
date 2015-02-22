@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ ! -z "$1" ]; then
   LOC=$1
-  LOC2=LOC1
+  LOC2=$LOC1
 else 
   LOC=/tmp
   LOC2=/opt
@@ -22,13 +22,14 @@ tar -zxf $LOC/python/pyOpenSSL.tar.gz -C /tmp/pyOpenSSL.tar.gz
 
 # Download cheetah
 echo Downloading cheetah
-wget --no-check-certificate http://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz -O $LOC/python/cheetah_dl.tar.gz  -nv 
+wget --no-check-certificate http://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz -O $LOC/python/cheetah.tar.gz  -nv 
 mkdir /tmp/cheetah.tar.gz
-tar -zxf $LOC/python/cheetah_dl.tar.gz -C /tmp/cheetah.tar.gz
+tar -zxf $LOC/python/cheetah.tar.gz -C /tmp/cheetah.tar.gz
 
 # Clone Sickbeard
 echo Cloning sickbeard repo
-if [ ! -d "$LOC2/sickbeard" ]; then
-  mkdir $LOC2/pysickbeard
+if [ -d "$LOC2/sickbeard" ]; then
+  rm -rf $LOC2/sickbeard
 fi
-git clone git://github.com/midgetspy/Sick-Beard.git $LOC2/sickbeard
+mkdir $LOC2/sickbeard
+git clone -b master git://github.com/midgetspy/Sick-Beard.git $LOC2/sickbeard

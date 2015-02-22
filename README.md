@@ -16,8 +16,7 @@
   When running these items should be exposed or mapped.
   
   Volumes
-    - /opt/sickbeard/config.ini for sickbeard configuration files (if you want the configuration file external)
-  
+     
     - /var/logs/                for log files
   
     - /mnt/media                mapped to the media files
@@ -34,3 +33,14 @@
 ## To run container
 
   > docker run --name sickbeard -v /mnt/media:/container/media  -p 43091:9091 -p 43080:8081
+
+## Backup config file
+
+  > CONT=`docker ps -a | grep sickbeard | awk '{ print $1 }'`
+  > docker cp $CONT:/opt/sickbeard/config.ini $PWD
+  > docker cp $CONT:/opt/sickbeard/sickbeard.db $PWD
+
+## Extract autoProcess script
+
+  > CONT=`docker ps -a | grep sickbeard | awk '{ print $1 }'`
+  > docker cp $CONT:/opt/sickbeard/autoProcessTV/ $PWD

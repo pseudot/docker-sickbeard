@@ -53,7 +53,7 @@ RUN cd /tmp/pyOpenSSL.tar.gz/pyOpenSSL-*/; python setup.py install
 RUN rm -rf /tmp/*
 
 # Expose volumes
-VOLUME [ "/var/log", "/opt/sickbeard" ]
+VOLUME [ "/var/log" ]
 
 EXPOSE 8081 9091
 
